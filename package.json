@@ -11,7 +11,7 @@
     ]
   },
   "scripts": {
-    "test": "mocha 'src/test/*.js'",
+    "test": "mocha 'src/test/*.js' && c8 mocha 'src/test/*.js'",
     "coverage":  "c8 mocha 'src/test/*.js' "
   },
   "author": "",

@@ -29,11 +29,4 @@ jobs:
       - run: npm ci
       - run: npm run build --if-present
       - run: npm test
-      - name: Generate coverage with c8
-        run: npm run coverage
-               - name: Upload coverage to Coveralls
-               if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}
-               env:
-                 COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
-               run: npx coveralls < ./coverage/lcov.info
 
