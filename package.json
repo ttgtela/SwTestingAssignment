@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "c8": {
+    "exclude": [
+      "src/.internal/*.js",
+      "src/test/*.js"
+    ]
+  },
   "scripts": {
-    "test": "mocha 'src/test/*.js'"
+    "test": "mocha 'src/test/*.js'",
+    "coverage":  "c8 mocha 'src/test/*.js' "
   },
   "author": "",
   "license": "MIT",
