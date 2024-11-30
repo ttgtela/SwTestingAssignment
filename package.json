@@ -8,11 +8,14 @@
     "exclude": [
       "src/.internal/*.js",
       "src/test/*.js"
-    ]
+    ],
+    "reporter": ["lcov", "text-summary"],
+    "all": true,
+    "report-dir": "./coverage"
   },
   "scripts": {
-    "test": "mocha 'src/test/*.js' && c8 mocha 'src/test/*.js'",
-    "coverage":  "c8 mocha 'src/test/*.js' "
+    "test": "c8 mocha 'src/test/*.js'",
+    "coverage":  "c8 --reporter=lcov --reporter=text-summary mocha 'src/test/*.js'"
   },
   "author": "",
   "license": "MIT",
