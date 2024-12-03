@@ -9,7 +9,9 @@ describe("filter.js", () => {
     });
 
     describe("negative tests", function(){
-
+        it('Giving an empty array with arbitrary function, expecting a nested empty array as a result.', () =>{
+            expect(filter([], ({isFruit}) => isFruit)).to.deep.equal([[]])
+        });
     });
 
 });
