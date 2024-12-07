@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import capitalize from '../capitalize.js';
+import toString from "../toString.js";
 
 describe('capitalize', () => {
     describe('Positive Tests', () => {
@@ -17,6 +18,11 @@ describe('capitalize', () => {
             const result = capitalize('sOmeOnE');
             expect(result).to.equal('Someone');
         });
+        it('should handle strings with spaces', () => {
+            const result = capitalize(' hello');
+            expect(result).to.equal(' hello');
+        });
+
     });
 
     describe('Negative Tests', () => {
@@ -29,5 +35,18 @@ describe('capitalize', () => {
             const result = capitalize(123);
             expect(result).to.equal('123');
         });
+
+        it('should handle non-string objects', () => {
+            const result = capitalize({ key: 'value' });
+            expect(result).to.equal('[object object]');
+        });
+
+        it('should handle null or undefined values gracefully', () => {
+            expect(capitalize(null)).to.equal('Null');
+            expect(capitalize(undefined)).to.equal('Undefined');
+        });
+
+
+
     });
 });

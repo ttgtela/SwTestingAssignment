@@ -32,10 +32,22 @@ describe('eq', () => {
             const object2 = { a: 1 };
             expect(eq(object1, object2)).to.be.false;
         });
+
         it("should return false for different values",()=>{
             expect(eq(1, 2)).to.be.false;
             expect(eq("one", "two")).to.be.false;
         });
 
+        it('should handle cases where one value is `NaN` and the other is not', () => {
+            expect(eq(NaN, 0)).to.be.false;
+            expect(eq(NaN, undefined)).to.be.false;
+        });
+
+        /*
+        it('should return false for primitive and object-wrapped equivalents', () => {
+            expect(eq('a', Object('a'))).to.be.false;
+            expect(eq(1, Object(1))).to.be.false;
+        });
+         */
     });
 });

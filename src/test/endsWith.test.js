@@ -20,6 +20,18 @@ describe('endsWith', () => {
             expect(endsWith('abc', '')).to.be.true;
         });
 
+        it('should return true when both the string and target are empty', () => {
+            expect(endsWith('', '')).to.be.true;
+        });
+
+        it('should return true when position exceeds the string length and the target matches the end', () => {
+            expect(endsWith('abc', 'c', 10)).to.be.true;
+        });
+
+        it('should handle strings with special characters', () => {
+            expect(endsWith('abc!@#', '!@#')).to.be.true;
+        });
+
     });
 
     describe('Negative Tests', () => {
@@ -29,6 +41,10 @@ describe('endsWith', () => {
 
         it('should return false if position is negative', () => {
             expect(endsWith('abc', 'a', -1)).to.be.false;
+        });
+
+        it('should return false when the position is less than the target length', () => {
+            expect(endsWith('abc', 'c', 1)).to.be.false;
         });
 
         it('should return false if the target is longer than the string', () => {
@@ -42,5 +58,17 @@ describe('endsWith', () => {
         it('should handle NaN as position by treating it as 0', () => {
             expect(endsWith('abc', 'a', NaN)).to.be.false;
         });
+
+        it('should return false when the string or target is not a string', () => {
+            expect(endsWith(123, '3')).to.be.false;
+            expect(endsWith('123', 3)).to.be.false;
+        });
+
+        it('should return false when position is explicitly set to 0', () => {
+            expect(endsWith('abc', 'a', 0)).to.be.false;
+        });
+
+
+
     });
 });
