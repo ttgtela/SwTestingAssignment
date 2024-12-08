@@ -31,7 +31,7 @@ describe("difference.js", () => {
     });
 
     describe("negative tests", function(){
-        it('Giving a non-array value as parameter for the array to be reduced, expecting []', () =>{
+        it('Giving a non-array value as parameter for the array to be reduced, expecting [].', () =>{
             expect(difference("apple", ["banana"])).to.deep.equal([])
         });
 
