@@ -1,3 +1,2 @@
 README
-https://coveralls.io/repos/github/ttgtela/SwTestingAssignment/badge.svg
-(Coverage Status)!:https://coveralls.io/github/ttgtela/SwTestingAssignment
+[![Coverage Status](https://coveralls.io/repos/github/ttgtela/SwTestingAssignment/badge.svg?branch=main)](https://coveralls.io/github/ttgtela/SwTestingAssignment?branch=main)
