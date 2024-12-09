@@ -69,6 +69,14 @@ describe('endsWith', () => {
         });
 
 
+        /*
+        it('should handle undefined or null values for the target gracefully', () => {
+            expect(endsWith('abc', null)).to.be.false;
+            expect(endsWith('abc', undefined)).to.be.false;
+        });
+        */
+
+
 
     });
 });
