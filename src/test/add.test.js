@@ -20,12 +20,11 @@ describe("add.js", () => {
             expect(add(4, null)).to.equal(4);
             expect(add(null, null)).to.equal(0);
         });
-        /*
         it('should return NaN when one or both arguments are non-numeric', () => {
             expect(add('a', 4)).to.equal(0);
             expect(add(4, 'b')).to.equal(0);
             expect(add('a', 'b')).to.equal(0);
         });
-         */
+
     });
 });

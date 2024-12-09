@@ -43,11 +43,10 @@ describe('eq', () => {
             expect(eq(NaN, undefined)).to.be.false;
         });
 
-        /*
         it('should return false for primitive and object-wrapped equivalents', () => {
             expect(eq('a', Object('a'))).to.be.false;
             expect(eq(1, Object(1))).to.be.false;
         });
-         */
+
     });
 });
