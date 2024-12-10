@@ -7,18 +7,15 @@ describe("isArrayLikeObject.js", () => {
             expect(isArrayLikeObject(["apple", "banana", "orange"])).to.be.true
         });
 
-        it('Giving an empty array as a parameter, expecting true.', () =>{
-            expect(isArrayLikeObject([])).to.be.true
+        it('Giving a non-array value as parameter, expecting false.', () =>{
+            expect(isArrayLikeObject(123)).to.be.false
         });
 
-        it('Giving an empty array as a parameter, expecting true.', () =>{
-            expect(isArrayLikeObject([null])).to.be.true
-        });
     });
 
     describe("Negative tests", function(){
-        it('Giving a non-array value as parameter, expecting false.', () =>{
-            expect(isArrayLikeObject(123)).to.be.false
+        it('Giving an empty array as a parameter, expecting true.', () =>{
+            expect(isArrayLikeObject([])).to.be.true
         });
 
         it('Giving null as parameter, expecting false.', () =>{

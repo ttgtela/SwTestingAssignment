@@ -7,20 +7,10 @@ describe("isEmpty.js", () => {
             expect(isEmpty({})).to.be.true
         });
 
-        it('Giving null as a parameter, expecting true.', () =>{
-            expect(isEmpty(null)).to.be.true
-        });
-
         it('Giving an integer as a parameter, expecting true.', () =>{
             expect(isEmpty(3)).to.be.true
         });
 
-        it('Giving undefined as a parameter, expecting true.', () =>{
-            expect(isEmpty(undefined)).to.be.true
-        });
-    });
-
-    describe("negative tests", function(){
         it('Giving a string as a parameter, expecting false.', () =>{
             expect(isEmpty('apple')).to.be.false
         });
@@ -31,6 +21,16 @@ describe("isEmpty.js", () => {
 
         it('Giving a key-value pair as a parameter, expecting false.', () =>{
             expect(isEmpty({'key' : 3})).to.be.false
+        });
+    });
+
+    describe("negative tests", function(){
+        it('Giving null as a parameter, expecting true.', () =>{
+            expect(isEmpty(null)).to.be.true
+        });
+
+        it('Giving undefined as a parameter, expecting true.', () =>{
+            expect(isEmpty(undefined)).to.be.true
         });
     });
 

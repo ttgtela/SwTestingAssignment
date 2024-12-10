@@ -7,6 +7,18 @@ describe("add.js", () => {
         it("Adding positive 3 and 5, expecting positive 8.", () =>{
             expect(add(3,5)).to.equal(8)
         });
+
+        it("Adding -2 and -2, expecting -4.", () =>{
+            expect(add(-2,-2)).to.equal(-4)
+        });
+
+        it("Adding -2 and 2, expecting 0.", () =>{
+            expect(add(-2,2)).to.equal(0)
+        });
+
+        it("Adding 4 and -2, expecting 2.", () =>{
+            expect(add(4,-2)).to.equal(2)
+        });
     });
 
     describe("negative tests", function(){

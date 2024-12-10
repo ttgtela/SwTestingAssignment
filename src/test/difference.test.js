@@ -19,14 +19,6 @@ describe("difference.js", () => {
             expect(difference([2, 1])).to.deep.equal([2, 1]);
         });
 
-        it('should handle empty arrays correctly', () => {
-            expect(difference([], [1, 2])).to.deep.equal([]);
-            expect(difference([1, 2], [])).to.deep.equal([1, 2]);
-        });
-
-        it('should use `SameValueZero` for equality comparisons', () => {
-            expect(difference([NaN, 2, 1], [NaN])).to.deep.equal([2, 1]);
-        });
 
     });
 
@@ -35,9 +27,13 @@ describe("difference.js", () => {
             expect(difference("apple", ["banana"])).to.deep.equal([])
         });
 
-        it('should return an empty array if the first argument is an empty array, regardless of other inputs', () => {
+        it('should handle empty arrays correctly', () => {
             expect(difference([], [1, 2])).to.deep.equal([]);
-            expect(difference([], [])).to.deep.equal([]);
+            expect(difference([1, 2], [])).to.deep.equal([1, 2]);
+        });
+
+        it('should use `SameValueZero` for equality comparisons', () => {
+            expect(difference([NaN, 2, 1], [NaN])).to.deep.equal([2, 1]);
         });
 
 

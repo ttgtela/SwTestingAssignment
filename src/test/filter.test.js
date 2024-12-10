@@ -19,10 +19,6 @@ describe("filter.js", () => {
             expect(result).to.deep.equal([0, 2]);
         });
 
-        it('should handle an empty array and return an empty array', () => {
-            const result = filter([], (value) => value > 0);
-            expect(result).to.deep.equal([[]]);
-        });
 
         it('should work with complex predicates', () => {
             const items = ['apple', 'banana', 'cherry'];
@@ -36,12 +32,12 @@ describe("filter.js", () => {
             expect(filter([], ({isFruit}) => isFruit)).to.deep.equal([[]])
         });
 
-        it('should return an empty array if the input array is null or undefined', () => {
+        it('should return a nested empty array if the input array is null or undefined', () => {
             expect(filter(null, () => true)).to.deep.equal([[]]);
             expect(filter(undefined, () => true)).to.deep.equal([[]]);
         });
 
-        it('should handle non-array inputs by returning an empty array', () => {
+        it('should handle non-array inputs by returning a nested empty array', () => {
             expect(filter(12345, () => true)).to.deep.equal([[]]);
             expect(filter({ a: 1, b: 2 }, () => true)).to.deep.equal([[]]);
         });
