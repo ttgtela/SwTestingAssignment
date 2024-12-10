@@ -24,6 +24,7 @@ describe('eq', () => {
             expect(eq("one", "two")).to.be.false;
         });
 
+        // This test case fails, see Test report for a bug report
         it('should return false for primitive and object-wrapped equivalents', () => {
             expect(eq('a', Object('a'))).to.be.false;
             expect(eq(1, Object(1))).to.be.false;
